@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Features/Auth/Presentation/pages/login_page.dart';
+import 'package:flutter_application_1/core/theme/theme.dart';
 import 'package:flutter_application_1/features/auth/presentation/pages/signup_page.dart';
 
 void main() {
@@ -18,11 +20,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter App",
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const SignupPage(),
+      theme: AppTheme.darkThemeMode,
+      home: const LoginPage(),
     );
   }
 }
