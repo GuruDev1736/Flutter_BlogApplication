@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Features/Auth/Presentation/Widgets/auth_feild.dart';
-import 'package:flutter_application_1/Features/Auth/Presentation/Widgets/auth_gradient_button.dart';
-import 'package:flutter_application_1/Features/Auth/Presentation/pages/login_page.dart';
 import 'package:flutter_application_1/core/theme/app_palate.dart';
+import 'package:flutter_application_1/features/auth/presentation/Widgets/auth_feild.dart';
+import 'package:flutter_application_1/features/auth/presentation/Widgets/auth_gradient_button.dart';
+import 'package:flutter_application_1/features/auth/presentation/pages/login_page.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
