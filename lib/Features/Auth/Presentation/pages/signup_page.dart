@@ -1,31 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/theme/app_palate.dart';
-import 'package:flutter_application_1/features/auth/presentation/Widgets/auth_feild.dart';
-import 'package:flutter_application_1/features/auth/presentation/Widgets/auth_gradient_button.dart';
-import 'package:flutter_application_1/features/auth/presentation/pages/signup_page.dart';
+import 'package:flutter_application_1/Features/Auth/Presentation/Widgets/auth_feild.dart';
+import 'package:flutter_application_1/Features/Auth/Presentation/Widgets/auth_gradient_button.dart';
+import 'package:flutter_application_1/Features/Auth/Presentation/pages/login_page.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignupPage extends StatefulWidget {
+  const SignupPage({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _SignupPageState createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignupPageState extends State<SignupPage> {
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
+  final nameController = TextEditingController();
   final passwordController = TextEditingController();
 
   @override
   void dispose() {
     emailController.dispose();
     passwordController.dispose();
+    nameController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Form(
@@ -34,11 +37,15 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Sign In",
+                "Sign Up",
                 style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 30,
+              ),
+              AuthField(hintText: "Name", editingController: nameController),
+              const SizedBox(
+                height: 15,
               ),
               AuthField(
                 hintText: "Email",
@@ -56,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 20,
               ),
               AuthGradientButton(
-                text: "Sign In",
+                text: "Sign Up",
               ),
               const SizedBox(
                 height: 20,
@@ -66,16 +73,16 @@ class _LoginPageState extends State<LoginPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SignupPage(),
+                        builder: (context) => LoginPage(),
                       ));
                 },
                 child: RichText(
                     text: TextSpan(
-                        text: 'Dont\'t have an Account?',
+                        text: 'Already have an Account?',
                         style: Theme.of(context).textTheme.titleMedium,
                         children: [
                       TextSpan(
-                          text: " Sign Up",
+                          text: " Sign In",
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium
