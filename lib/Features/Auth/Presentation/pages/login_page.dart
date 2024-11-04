@@ -5,7 +5,7 @@ import 'package:flutter_application_1/Features/Auth/Presentation/Widgets/auth_gr
 import 'package:flutter_application_1/Features/Auth/Presentation/pages/signup_page.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   _LoginPageState createState() => _LoginPageState();
